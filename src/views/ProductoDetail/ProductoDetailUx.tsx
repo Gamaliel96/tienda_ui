@@ -9,13 +9,19 @@ export interface IProductoDetailUx {
   error: any;
   form: INewProducto;
   onReturnClick: () => void;
+  onSubmitDeleteHandler: () => void;
+  onChangeHandler: (name: string, value: string | number) => void;
+  onSubmitUpdateHandler: () => void;
 }
 
 const ProductoDetailUx = ({
   form,
   isLoading,
   error,
+  onChangeHandler,
   onReturnClick,
+  onSubmitDeleteHandler,
+  onSubmitUpdateHandler,
 }: IProductoDetailUx) => {
   return (
     <Page pageTitle="Nuevo Producto">
@@ -26,42 +32,89 @@ const ProductoDetailUx = ({
           <img src={form.imagen} />
           <Field
             name="nombre"
+            onChange={(e) => {
+              onChangeHandler(e.target.name, e.target.value);
+            }}
             labelText="Nombre"
             value={form.nombre}
-            readOnly
           />
           <Field
-            name="description"
+            name="descripcion"
             labelText="Descripción"
+            onChange={(e) => {
+              onChangeHandler(e.target.name, e.target.value);
+            }}
             value={form.descripcion}
-            readOnly
           />
           <Field
             name="precio"
             labelText="Precio"
+            onChange={(e) => {
+              onChangeHandler(e.target.name, e.target.value);
+            }}
             value={String(form.precio)}
             type="number"
-            readOnly
           />
           <Field
             name="stock"
             labelText="Cantidad disponible"
+            onChange={(e) => {
+              onChangeHandler(e.target.name, e.target.value);
+            }}
             value={String(form.stock)}
             type="number"
-            readOnly
           />
-          <DateField labelText="Fecha" name="date" value={String(form.date)} />
-          <ActionField>
-            <Button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onReturnClick();
-              }}
-            >
-              Atrás
-            </Button>
-          </ActionField>
+          <DateField
+            onChange={(e) => {
+              onChangeHandler(e.target.name, e.target.value);
+            }}
+            labelText="Fecha"
+            name="date"
+            value={String(form.date)}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "end",
+            }}
+          >
+            <ActionField>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onReturnClick();
+                }}
+              >
+                Atrás
+              </Button>
+            </ActionField>
+            <ActionField>
+              <Button
+                style={{ backgroundColor: "#0984e3", color: "white" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onSubmitUpdateHandler();
+                }}
+              >
+                Actualizar
+              </Button>
+            </ActionField>
+            <ActionField>
+              <Button
+                style={{ backgroundColor: "#d63031", color: "white" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onSubmitDeleteHandler();
+                }}
+              >
+                Eliminar
+              </Button>
+            </ActionField>
+          </div>
         </section>
       )}
     </Page>
