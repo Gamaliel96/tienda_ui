@@ -58,7 +58,7 @@ const ProductoUx = ({
       </Button>
       <section className="ProductosHolder">
         {isLoading && <div>Loading...</div>}
-        {error && <ErrorField>Error al cargar CashFlow</ErrorField>}
+        {error && <ErrorField>Error al cargar Productos</ErrorField>}
         {data &&
           data.items.map((o: IProducto) => ProductoCard(o, viewDetailClick))}
       </section>

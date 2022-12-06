@@ -7,7 +7,6 @@ import {
 import PrivateRoute from "@components/PrivateRoute";
 import Login from "@views/Login";
 import SignUp from "@views/SignUp";
-import Home from "@views/Home";
 import Producto from "@views/Productos";
 import ProductoNew from "@views/ProductoNew";
 import ChartsExamples from "@views/ChartsExamples";
@@ -26,17 +25,13 @@ const Routes = () => {
         <Route
           path="/home"
           element={
-            <PrivateRoute allowedRoles={["public","admin"]}>
               <Producto />
-            </PrivateRoute>
           }
         />
          <Route
           path="/productos"
           element={
-            <PrivateRoute allowedRoles={["public","admin"]}>
               <Producto />
-            </PrivateRoute>
           }
         />
         <Route

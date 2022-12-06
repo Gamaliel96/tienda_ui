@@ -32,7 +32,7 @@ export interface IGetAllProductosResponse {
   items: IProducto[];
 }
 
-export const cashFlowApi = createApi({
+export const productosApi = createApi({
   reducerPath: "productosApi",
   baseQuery: fetchBaseQuery({
     baseUrl: `${process.env.REACT_APP_API_BASE_URL}/productos`,
@@ -73,4 +73,4 @@ export const cashFlowApi = createApi({
   })
 });
 
-export const { useAllProductosQuery, useProductoByIdQuery, useAllProductosAdminQuery , useNewProductoMutation } = cashFlowApi;
+export const { useAllProductosQuery, useProductoByIdQuery, useAllProductosAdminQuery , useNewProductoMutation } = productosApi;
