@@ -9,10 +9,8 @@ import Login from "@views/Login";
 import SignUp from "@views/SignUp";
 import Producto from "@views/Productos";
 import ProductoNew from "@views/ProductoNew";
-import ChartsExamples from "@views/ChartsExamples";
 import NotFound from "@views/NotFound";
 import ProductoDetail from "@views/ProductoDetail";
-import ProductoAdmin from "@views/ProductosAdmin";
 
 const Routes = () => {
   return (
@@ -21,7 +19,6 @@ const Routes = () => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/charts" element={<ChartsExamples />} />
         <Route
           path="/home"
           element={
@@ -47,14 +44,6 @@ const Routes = () => {
           element={
             <PrivateRoute allowedRoles={["public","admin"]}>
               <ProductoDetail />
-            </PrivateRoute>
-          }
-        />
-         <Route
-          path="/admin/productos"
-          element={
-            <PrivateRoute allowedRoles={["public","admin"]}>
-              <ProductoAdmin />
             </PrivateRoute>
           }
         />

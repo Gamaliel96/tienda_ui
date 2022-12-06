@@ -77,12 +77,6 @@ const Menu = () => {
               &nbsp;Productos
             </a>
           </li>
-          <li>
-            <a href="/admin/productos" onClick={onClickHandler}>
-              <BiLock />
-              &nbsp;Admin Productos
-            </a>
-          </li>
         </ul>
       </nav>
     );
