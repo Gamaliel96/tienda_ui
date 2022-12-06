@@ -1,0 +1,17 @@
+LINK DE REPOSITORIO DE GITHUB API
+https://github.com/Gamaliel96/tienda_api.git
+LINK DE REPOSITORIO DE GITHUB UI
+https://github.com/Gamaliel96/tienda_ui.git
+
+
+INTEGRANTES GRUPO 7
+María José Ramos Erazo 1401200200144
+Jessy Lizeth Díaz Avila 0803199900565
+Carlos Daniel Amaya Montalvan 0703199901926
+Rocio Alejandra Lopez Guzman  0501199909107
+Jostin Gamaliel Aleman Lopez 1613200000123
+Amilcar Jafet Reyes Mejia 0318200200462
+
+LINK YOUTUBE
+https://youtu.be/OMcZXKjpRX8
+
